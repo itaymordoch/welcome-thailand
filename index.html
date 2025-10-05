@@ -5,31 +5,59 @@
 <style>
   :root {
     --bg: #ffffff;
-    --card-bg: #ffffff;
     --text: #222;
     --border: #f2efe8;
     --shadow: rgba(0,0,0,0.05);
   }
-  body {
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    height:100vh;
-    margin:0;
-    background:var(--bg);
-    font-family:"Inter","Helvetica Neue",Arial,sans-serif;
+
+  * {
+    box-sizing: border-box;
   }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    background: var(--bg);
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    text-align: center;
+    color: var(--text);
+  }
+
   h1 {
-    background:var(--card-bg);
-    color:var(--text);
-    font-size:clamp(28px,5vw,60px);
-    padding:40px 70px;
-    border:2px solid var(--border);
-    border-radius:24px;
-    box-shadow:0 6px 24px var(--shadow);
-    text-align:center;
-    letter-spacing:0.5px;
-    font-weight:500;
+    margin-top: 12vh;
+    margin-bottom: 4vh;
+    font-size: clamp(28px, 6vw, 60px);
+    font-weight: 500;
+    padding: 20px 40px;
+    border: 2px solid var(--border);
+    border-radius: 24px;
+    box-shadow: 0 6px 24px var(--shadow);
+    background: #fffef9;
+  }
+
+  .photo {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: cover;
+    border-top: 2px solid var(--border);
+    border-bottom: 2px solid var(--border);
+  }
+
+  @media (max-width: 600px) {
+    h1 {
+      margin-top: 8vh;
+      margin-bottom: 3vh;
+      padding: 16px 24px;
+    }
+    .photo {
+      max-height: 60vh;
+    }
   }
 </style>
+
 <h1>Welcome to Thailand</h1>
+<img src="photo.png" alt="Thailand" class="photo">
